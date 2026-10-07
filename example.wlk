@@ -29,19 +29,33 @@ class Escudo{
 class Gladiador {
   var vida = 100
   var fuerza 
-  var destreza
+  var destreza 
   var arma
+
   method fuerza() = fuerza
   method destreza() = destreza
-  method defenderse(){}
+  method cambiarArma(nuevaArma) {
+    arma = nuevaArma
+  }
   method vida() = vida
-  method arma(){}
 }
 
 class Mirmillones inherits Gladiador {
-  var armadura
+  var armadura 
+
   override method destreza() = 15
-  method cambiarArmadura(otraArmadura){
-    armadura = otraArmadura
+  method cambiarArmadura(nuevaArmadura) {
+    armadura = nuevaArmadura
+  }
+}
+
+class Dimachaerus inherits Gladiador {
+  const armas = []
+
+  method agregarArma(unArma) {
+    armas.add(unArma)
+  }
+  method quitarArma(unArma) {
+    armas.remove(unArma)
   }
 }
