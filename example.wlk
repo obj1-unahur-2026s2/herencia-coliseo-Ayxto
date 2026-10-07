@@ -1,9 +1,36 @@
-object pepita {
-  var energy = 100
+class ArmaDeFilo {
+    const filo
+    const longitud 
 
-  method energy() = energy
+    method poderAtaque() {
+        return filo * longitud
+    }
+}
 
-  method fly(minutes) {
-    energy = energy - minutes * 3
-  }
+class ArmaContundente {
+    const peso
+
+    method poderAtaque() {
+        return peso
+    }
+}
+class Casco{
+  method puntosDeArmadura(gladiador) = 10
+}
+
+class Escudo{
+  method puntosDeArmadura(gladiador) = 5 + (gladiador.destreza() * 0.10)
+}
+
+class Gladiador {
+  var vida = 100
+  var fuerza 
+  var destreza
+  method fuerza() = fuerza
+  method destreza() = destreza
+  method vida() = vida
+}
+
+class Mirmillones inherits Gladiador {
+  override method destreza() = 15
 }
