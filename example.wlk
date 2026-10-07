@@ -14,6 +14,10 @@ class ArmaContundente {
         return peso
     }
 }
+
+class Armadura {
+  method defensa()
+}
 class Casco{
   method puntosDeArmadura(gladiador) = 10
 }
@@ -26,11 +30,18 @@ class Gladiador {
   var vida = 100
   var fuerza 
   var destreza
+  var arma
   method fuerza() = fuerza
   method destreza() = destreza
+  method defenderse(){}
   method vida() = vida
+  method arma(){}
 }
 
 class Mirmillones inherits Gladiador {
+  var armadura
   override method destreza() = 15
+  method cambiarArmadura(otraArmadura){
+    armadura = otraArmadura
+  }
 }
